@@ -13,6 +13,7 @@ import com.niafikra.dimension.plan.repository.AllocationRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -475,8 +476,12 @@ public class AllocationService {
             Resource resource = resourceService.getResource(resourceId);
             BigDecimal proposedValue = new BigDecimal(row.getCell(4).getNumericCellValue());
             Money proposedAmount = new Money(proposedValue);
-            String description = row.getCell(5).getStringCellValue();
-            String reason = row.getCell(6).getStringCellValue();
+
+            Cell descriptionCell = row.getCell(5);
+            String description = descriptionCell != null ? descriptionCell.getStringCellValue() : "";
+
+            Cell reasonCell = row.getCell(6);
+            String reason = reasonCell != null ? reasonCell.getStringCellValue() : "";
 
             if (proposedAmount.isZero()) {
                 deleteAllocations(budget, role, resource);
@@ -486,7 +491,8 @@ public class AllocationService {
                         resource,
                         proposedAmount,
                         description,
-                        reason);
+                        reason
+                );
             }
         }
     }
