@@ -1,5 +1,6 @@
 package com.niafikra.dimension.plan.service;
 
+import com.niafikra.dimension.approval.ApprovalPermission;
 import com.niafikra.dimension.approval.domain.Tracker;
 import com.niafikra.dimension.approval.event.ApprovalCancellationEvent;
 import com.niafikra.dimension.approval.event.ApprovalCompletionEvent;
@@ -30,7 +31,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.niafikra.dimension.Permission.OVERRIDE_APPROVE_REQUEST;
 import static com.niafikra.dimension.core.security.SecurityUtils.getCurrentUser;
 import static com.niafikra.dimension.core.security.SecurityUtils.hasAuthority;
 import static java.lang.String.format;
@@ -302,7 +302,7 @@ public class RetirementService {
             throw new IllegalStateException("Retirement request is not currently pending approval");
 
         //can current user approve retirement request
-        if (!trackerService.canApprove(retirement, getCurrentUser(userService)) && !hasAuthority(OVERRIDE_APPROVE_REQUEST))
+        if (!trackerService.canApprove(retirement, getCurrentUser(userService)) && !hasAuthority(ApprovalPermission.OVERRIDE_APPROVE_REQUEST))
             throw new UnsupportedOperationException("Current user is not among the current approvers of the retirement request");
 
         //find entry which is not part of the retirement
