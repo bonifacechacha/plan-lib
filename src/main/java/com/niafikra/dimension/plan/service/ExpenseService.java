@@ -1,6 +1,7 @@
 package com.niafikra.dimension.plan.service;
 
 import com.niafikra.dimension.approval.service.ApprovalTrackerService;
+import com.niafikra.dimension.consumer.domain.Consumer;
 import com.niafikra.dimension.core.security.domain.User;
 import com.niafikra.dimension.core.security.service.UserService;
 import com.niafikra.dimension.core.util.DateUtils;

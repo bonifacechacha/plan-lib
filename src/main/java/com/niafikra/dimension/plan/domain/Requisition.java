@@ -2,6 +2,7 @@ package com.niafikra.dimension.plan.domain;
 
 import com.niafikra.dimension.approval.domain.Approvable;
 import com.niafikra.dimension.attachment.domain.Attachment;
+import com.niafikra.dimension.consumer.domain.Consumer;
 import com.niafikra.dimension.core.security.domain.User;
 import com.niafikra.dimension.money.Money;
 import lombok.EqualsAndHashCode;

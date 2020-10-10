@@ -6,6 +6,7 @@ import com.niafikra.dimension.approval.event.ApprovalCompletionEvent;
 import com.niafikra.dimension.approval.event.FetchApprovableEvent;
 import com.niafikra.dimension.approval.service.ApprovalTrackerService;
 import com.niafikra.dimension.approval.service.CriteriaService;
+import com.niafikra.dimension.consumer.domain.Consumer;
 import com.niafikra.dimension.core.security.SecurityUtils;
 import com.niafikra.dimension.core.security.domain.User;
 import com.niafikra.dimension.core.security.service.UserService;

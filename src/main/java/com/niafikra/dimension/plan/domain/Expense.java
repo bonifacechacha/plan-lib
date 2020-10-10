@@ -1,5 +1,6 @@
 package com.niafikra.dimension.plan.domain;
 
+import com.niafikra.dimension.consumer.domain.Consumer;
 import com.niafikra.dimension.core.security.domain.User;
 import com.niafikra.dimension.money.Money;
 import lombok.EqualsAndHashCode;
