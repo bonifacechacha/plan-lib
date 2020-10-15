@@ -1,11 +1,11 @@
 package com.niafikra.dimension.plan.service;
 
 import com.niafikra.dimension.core.security.domain.User;
+import com.niafikra.dimension.core.util.event.SaveEvent;
 import com.niafikra.dimension.plan.domain.CostCenter;
 import com.niafikra.dimension.plan.domain.QCostCenter;
 import com.niafikra.dimension.plan.domain.Resource;
 import com.niafikra.dimension.plan.domain.Role;
-import com.niafikra.dimension.plan.event.SaveEvent;
 import com.niafikra.dimension.plan.repository.CostCenterRepository;
 import org.hibernate.Hibernate;
 import org.springframework.context.ApplicationEventPublisher;

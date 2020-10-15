@@ -1,7 +1,7 @@
 package com.niafikra.dimension.plan.service;
 
+import com.niafikra.dimension.core.util.event.SaveEvent;
 import com.niafikra.dimension.plan.domain.PaymentMethod;
-import com.niafikra.dimension.plan.event.SaveEvent;
 import com.niafikra.dimension.plan.repository.PaymentMethodRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
